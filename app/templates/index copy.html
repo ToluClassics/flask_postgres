@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <title>Flask Form</title>
-
-    </head>
-    <body>
-        <div class="container">
+      <div class="container">
 
             <form class="well form-horizontal" action=" " method="post"  id="contact_form">
         <fieldset>
@@ -27,7 +17,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+          {{ wtf.form_field(form.first_name, class='form-control', placeholder='First Name', name="first_name") }}
             </div>
           </div>
         </div>
@@ -80,23 +70,11 @@
         <!-- Text input-->
         
         <div class="form-group">
-          <label class="col-md-4 control-label" >Password</label> 
+          <label class="col-md-4 control-label" >Company</label> 
             <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input name="user_password" placeholder="Password" class="form-control"  type="password">
-            </div>
-          </div>
-        </div>
-        
-        <!-- Text input-->
-        
-        <div class="form-group">
-          <label class="col-md-4 control-label" >Confirm Password</label> 
-            <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
+          <input name="company" placeholder="Company" class="form-control"  type="text">
             </div>
           </div>
         </div>
@@ -125,11 +103,6 @@
           </div>
         </div>
         
-        <!-- Select Basic -->
-        
-        <!-- Success message -->
-        <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
-        
         <!-- Button -->
         <div class="form-group">
           <label class="col-md-4 control-label"></label>
@@ -142,5 +115,4 @@
         </form>
         </div>
             </div><!-- /.container -->
-    </body>
-</html>
+{% endblock %}
