@@ -1,0 +1,92 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+      <div class="container">
+
+      <form class="well form-horizontal" action="" method="post"  id="contact_form">
+        {{ form.hidden_tag() }}
+        <fieldset>
+        
+        <!-- Form Name -->
+        <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+        
+        <!-- Text input-->
+        
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>  
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+          {{ wtf.form_field(form.first_name, class='form-control', placeholder='First name') }}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        
+        <div class="form-group">
+          <label class="col-md-4 control-label" ></label> 
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              {{ wtf.form_field(form.last_name, class='form-control', placeholder='Last name') }}
+            </div>
+          </div>
+        </div>
+        <!-- Text input-->
+        
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>  
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            {{ wtf.form_field(form.username, class='form-control', placeholder='Username') }}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        
+        <div class="form-group">
+          <label class="col-md-4 control-label" ></label> 
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              {{ wtf.form_field(form.company, class='form-control', placeholder='Company') }}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+               <div class="form-group">
+          <label class="col-md-4 control-label"></label>  
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              {{ wtf.form_field(form.email, class='form-control', placeholder='Email') }}
+            </div>
+          </div>
+        </div>
+        
+        
+        <!-- Text input-->
+               
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>  
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              {{ wtf.form_field(form.contact_no, class='form-control', placeholder='Contact Number') }}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4"><br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ wtf.form_field(form.submit, class='btn btn-warning') }}<span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+        </div>
+            </div><!-- /.container -->
+{% endblock %}
