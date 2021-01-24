@@ -15,5 +15,5 @@ def index():
         db.session.add(regForm)
         db.session.commit()
         flash('Successfully submitted your user')
-        return redirect(render_template('home.html'))
+        return redirect(url_for('index'))
     return render_template('home.html',form=form)
